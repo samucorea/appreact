@@ -33,7 +33,7 @@ export default function Cedula(props) {
       </View>
       <View style={styles.infoContainer}>
         <View style={{ ...styles.text, flex: 0.4, alignItems:'center'}} >
-            <Image source={{uri: `data:image/png;base64,${person.imagen}`}} style={{width:'90%',  height:'98%', resizeMode:'stretch'}}/>
+            <Image source={{uri: `data:image/png;base64,${person.imagen}`}} style={{width:'85%',height:220}}/>
         </View>
         <View style={{ ...styles.text, flex: 0.6, justifyContent: 'space-between'}} >
           <Text style={{fontFamily:'Inter_700Bold', textAlign:'center', marginBottom: 5, fontWeight:'bold', fontSize:25}}>{person.numeroCedula}</Text>
@@ -114,10 +114,11 @@ const styles = StyleSheet.create({
     },  
     container: {
       backgroundColor: '#fff',
-      margin:'10px',
+      margin:10,
+      marginTop: 40,
       borderColor: 'black',
-      borderWidth: '1px',
-      borderStyle: 'solid'
+      borderWidth: 1,
+      borderStyle: 'solid',
     },
     text: {
       fontFamily: 'Inter_400Regular',

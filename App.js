@@ -1,5 +1,5 @@
 
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, } from 'react-native';
 import { useState, useEffect } from 'react';
 import Cedula from './Cedula';
 import axios from 'axios';
@@ -22,10 +22,10 @@ export default function App() {
   }, []);
  
   return (
-    <View>
+    <ScrollView style={{flex: 1}}>
     
-      { data.map((cedula, i) => <Cedula person={cedula} key={i} /> )}
-    </View>
+    { data.map((cedula, i) => <Cedula person={cedula} key={i} /> )}
+    </ScrollView>
   );
 }
 
