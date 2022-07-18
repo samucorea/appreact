@@ -43,7 +43,7 @@ export default function Cedula(props) {
           <Text style={{...styles.text, fontSize: 10}}>FECHA DE NACIMIENTO:</Text>
           <Text style={{...styles.text, marginBottom: 5}}>{person.fechaNacimiento}</Text>
 
-          <View style={{flexDirection: 'row', alignItems:'baseline', }} ><Text style={{fontSize: 10}}>NACIONALIDAD: </Text> <Text style={{...styles.text, fontSize: 14}}>{person.nacionalidad}</Text></View>
+          <View style={{flexDirection: 'row', alignItems:'baseline', }}><Text style={{fontSize: 10}}>NACIONALIDAD: </Text><Text style={{...styles.text, fontSize: 14}}>{person.nacionalidad}</Text></View>
 
           <View>
             <View style={{flexDirection:'row'}}>

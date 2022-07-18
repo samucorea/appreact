@@ -9,11 +9,11 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(
+      const result = await fetch(
         'http://cedulaapifinal.somee.com/api/Cedulas',
       );
 
-      const json = result.data
+      const json = await result.json()
 
       setData(json);
     };
