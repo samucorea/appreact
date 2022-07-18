@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { View, Text } from 'react-native';
+import { useState, useEffect } from 'react';
+import Cedula from './Cedula';
 
 export default function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(
+        'http://cedulaapifinal.somee.com/api/Cedulas',
+      );
+
+      const json = await result.json()
+
+      setData(json);
+    };
+
+    fetchData();
+  }, []);
+ 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+    
+      { data.map((cedula, i) => <Cedula person={cedula} key={i} /> )}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
